@@ -1,0 +1,358 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+
+#wrap {
+    position: relative;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 800px;
+}
+
+/* header */
+header {
+    width: 200px;
+    height: 100%;
+}
+
+header>h1 {
+    width: 100%;
+    height: 130px;
+}
+
+header>h1>a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+header>h1>a:hover {
+    transform: scale(0.95);
+}
+
+header>h1>a>img {
+    width: 190px;
+}
+
+header>ul {
+    margin: 0 auto;
+    width: 90%;
+    border: 2px solid #e9e9e9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+header>ul>li.main {
+    width: 100%;
+}
+
+header>ul>li.main>a {
+    display: block;
+    text-align: center;
+    font: bold 16px/1 "Pretendard-Regular";
+    padding: 13px 0;
+}
+
+header>ul>li>ul.sub {
+    display: none;
+}
+
+header>ul>li>ul.sub>li {
+    width: 100%;
+}
+
+header>ul>li>ul.sub>li>a {
+    display: block;
+    text-align: center;
+    font: normal 14px/1 "Pretendard-Regular";
+    padding: 10px 0;
+}
+
+header>ul>li.main>a.on {
+    background: #333333;
+    color: #ffffff;
+}
+
+header>ul>li>ul.sub>li>a:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* contentBox */
+#contentBox {
+    display: flex;
+    width: 400px;
+    height: 100%;
+    padding: 20px 0 20px 20px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#contentBox #notice,
+#contentBox #gallery {
+    position: relative;
+    margin: 30px 0;
+    background: #ffffff;
+
+    border: 2px solid #e9e9e9;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+
+#contentBox #notice:hover,
+#contentBox #gallery:hover,
+#contentBox #href:hover {
+    border: 2px solid #fd9800;
+}
+
+#contentBox #notice:hover>a,
+#contentBox #gallery:hover>a,
+#contentBox #href:hover>a {
+    background: #fd9800;
+    border: 2px solid #fd9800;
+    color: #ffffff;
+}
+
+#contentBox #notice>a,
+#contentBox #gallery>a,
+#contentBox #href>a {
+    position: absolute;
+    left: -2px;
+    top: -20px;
+    display: block;
+    width: 100px;
+    text-align: center;
+    color: #333333;
+    font: bold 14px/1 "Pretendard-Regular";
+
+    padding: 8px 0;
+    background: #e9e9e9;
+    border-radius: 30px 30px 30px 0px;
+    border: 2px solid #e9e9e9;
+    transition: 0.1s;
+}
+
+#contentBox #notice>ul {
+    margin-top: 15px;
+    padding: 10px 0;
+}
+
+#contentBox #notice>ul>li {
+    display: flex;
+    padding: 12px 10px;
+    margin: 0 auto;
+    width: 95%;
+    border-bottom: 1px solid #ffffff;
+}
+
+#contentBox #notice>ul>li:hover {
+    border-bottom: 1px solid #9999;
+}
+
+#contentBox #notice>ul>li>a {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: normal 14px/1 "Pretendard-Regular";
+}
+
+#contentBox #notice>ul>li>span {
+    margin-left: auto;
+    font: normal 14px/1 "Pretendard-Regular";
+}
+
+#contentBox #gallery .photo {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#contentBox #gallery .photo>a {
+    width: 120px;
+    height: 80px;
+    display: block;
+}
+
+#contentBox #gallery .photo>a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#contentBox #href {
+    position: relative;
+    margin: 10px 0;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 2px solid #e9e9e9;
+}
+
+#contentBox #href:hover {
+    border: 2px solid #fd9800;
+}
+
+#contentBox #href #icon {
+    margin-top: 10px;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: scale(0.9);
+}
+
+#contentBox #href #icon>a {
+    display: block;
+    width: 100px;
+    padding: 15px 0;
+    margin: 0 5px;
+    /* height: 100px; */
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+#contentBox #href #icon>a:hover {
+    background: rgb(245, 245, 245);
+}
+
+#contentBox #href #icon>a>img {
+    width: 100%;
+    height: 40px;
+    object-fit: contain;
+}
+
+#contentBox #href #icon>a>span {
+    display: block;
+    text-align: center;
+    font: bold 14px/2 "Pretendard-Regular";
+}
+
+/* slide */
+#slide {
+    width: calc(100% - 200px - 400px);
+    height: 100%;
+    padding: 30px;
+}
+
+#slide #slideBox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#slide #slideBox .frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#slide #slideBox .frame>li {
+    width: 100%;
+    height: 100%;
+    background: #9af0ff;
+}
+
+#slide #slideBox .frame>li>a {
+    display: block;
+}
+
+#slide #slideBox .frame>li>a>img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* footer */
+footer {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    border-top: 2px solid #e9e9e9;
+}
+
+
+footer>h2 {
+    width: 200px;
+    height: 100%;
+}
+
+footer>h2>a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer>h2>a>img {
+    width: 120px;
+}
+
+footer .copyright {
+    display: flex;
+    width: calc(100% - 230px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .copyright span {
+    display: block;
+    font: normal 15px/1.5 "Pretendard-Regular";
+}
+
+footer .familySite {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .familySite select {
+    outline: none;
+    margin: 0 auto;
+    width: 75%;
+    padding: 5px 10px;
+    font: bold 14px/1 "Pretendard-Regular";
+}

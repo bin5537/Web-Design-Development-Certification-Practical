@@ -1,0 +1,481 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "S-CoreDream-3Light";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+#wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+#popupBg {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 99;
+}
+
+#popupBg #popup {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+    width: 380px;
+    background: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+#popupBg #popup h2 {
+    font: bold 16px/2 "S-CoreDream-3Light";
+}
+
+#popupBg #popup h1 {
+    color: #6cb800;
+    padding: 10px 0 0;
+    font: bold 26px/1 "S-CoreDream-3Light";
+}
+
+#popupBg #popup span.main {
+    padding: 20px 0;
+    display: block;
+    font: normal 14px/1.5 "S-CoreDream-3Light";
+}
+
+#popupBg #popup span.sub {
+    display: block;
+    font: bold 14px/1 "S-CoreDream-3Light";
+}
+
+#popupBg #popup button {
+    outline: none;
+    border: none;
+    margin-top: 50px;
+    width: 100%;
+    padding: 10px 0;
+    color: #ffffff;
+    background: #6cb800;
+    border-radius: 5px;
+    font: bold 14px/1 "S-CoreDream-3Light";
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#popupBg #popup button:hover {
+    background: #b88d00;
+}
+
+/* header */
+header {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100px;
+}
+
+header>h1 {
+    width: 220px;
+    height: 100%;
+}
+
+header>h1>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+header>h1>img {
+    width: 200px;
+    height: 40px;
+}
+
+header>ul {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+}
+
+header>ul>li.main {
+    position: relative;
+    float: left;
+    padding: 13px 0;
+    width: 140px;
+    text-align: center;
+}
+
+header>ul>li.main>a {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    font: bold 16px/1 "S-CoreDream-3Light";
+}
+
+header>ul>li.main>a.on::before {
+    transform: translateX(-50%) scaleX(100%);
+}
+
+header>ul>li.main>a::before {
+    content: "";
+    display: block;
+
+    position: absolute;
+    transform: translateX(-50%) scaleX(0%);
+    left: 50%;
+    bottom: 0px;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+    transition: 0.3s;
+}
+
+header .navBg {
+    position: absolute;
+    top: 103px;
+    width: 100%;
+    height: 155px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 4px 5px 20px 6px rgba(0, 0, 0, 0.06);
+    z-index: 1;
+}
+
+header>ul>li.main>ul.sub {
+    /* display: none; */
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 155px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header>ul>li.main>ul.sub>li {
+    padding: 10px 0;
+}
+
+header>ul>li.main>ul.sub>li>a {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    font: bold 14px/1 "S-CoreDream-3Light";
+}
+
+header>ul>li.main>ul.sub>li>a:hover::before {
+    transform: translateX(-50%) scaleX(100%);
+}
+
+header>ul>li.main>ul.sub>li>a::before {
+    content: "";
+    display: block;
+
+    position: absolute;
+    transform: translateX(-50%) scaleX(0%);
+    left: 50%;
+    bottom: 5px;
+    width: 100%;
+    border-bottom: 11px solid #6cb800;
+    transition: 0.3s;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* slide */
+#slide {
+    margin: 0 auto;
+    width: 1200px;
+    height: 300px;
+    padding: 20px 0;
+}
+
+#slide article {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 4px 12px 20px 6px rgba(0, 0, 0, 0.06);
+}
+
+#slide article>ul.frame {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#slide article>ul.frame>li {
+    min-width: 100%;
+    height: 100%;
+}
+
+#slide article>ul.frame>li>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#slide article>ul.frame>li>a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* contentBox */
+#contentBox {
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+    height: 200px;
+    padding: 10px 0;
+}
+
+#contentBox #notice {
+    flex: 1;
+    box-shadow: 1px 4px 8px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#contentBox #notice>a,
+#contentBox #gallery>a {
+    display: block;
+    border-right: 1.5px solid #ddd;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    font: bold 15px/35px "S-CoreDream-3Light";
+}
+
+#contentBox #notice>ul {
+    width: 100%;
+    height: calc(100% - 35px);
+    border-top: 1.5px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contentBox #notice>ul>li {
+    display: flex;
+    width: 100%;
+    /* padding: 3px 0; */
+    transition: .1s;
+}
+
+#contentBox #notice>ul>li:nth-child(odd) {
+    background: #f1f1f1;
+}
+
+#contentBox #notice>ul>li:hover {
+    background: #6cb800;
+}
+
+#contentBox #notice>ul>li:hover>a {
+    color: white;
+}
+
+#contentBox #notice>ul>li>a {
+    padding: 7px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: normal 13px/1 "S-CoreDream-3Light";
+}
+
+#contentBox #gallery {
+    margin: 0 20px;
+    flex: 1;
+    box-shadow: 1px 4px 8px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#contentBox #gallery>ul {
+    width: 100%;
+    height: calc(100% - 35px);
+    border-top: 1.5px solid #ddd;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#contentBox #gallery>ul>li {
+    width: 90px;
+    height: 70px;
+}
+
+#contentBox #gallery>ul>li>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#contentBox #gallery>ul>li>a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.2s;
+    border-radius: 5px;
+    box-shadow: 1px 4px 8px 2px rgba(0, 0, 0, 0.06);
+}
+
+#contentBox #gallery>ul>li>a>img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 1px 4px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+#contentBox #banner {
+    flex: 1;
+    /* padding: 20px 0; */
+    box-shadow: 1px 4px 8px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#contentBox #banner>a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #5e5e5e;
+}
+
+#contentBox #banner>a>img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: 0.4s;
+}
+
+#contentBox #banner>a:hover>img {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+}
+
+#contentBox #banner>a>span.main {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    bottom: 42px;
+    left: 10px;
+    color: white;
+    font: bold 16px/1 "S-CoreDream-3Light";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#contentBox #banner>a>span.sub {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: white;
+    font: bold 13px/1 "S-CoreDream-3Light";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+}
+
+
+/* footer */
+footer {
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100px;
+}
+
+footer>h2 {
+    flex: 2;
+    padding: 10px 0;
+}
+
+footer>h2>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+footer>h2>a>img {
+    width: 160px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+footer>h2>a:hover>img {
+    opacity: 1;
+}
+
+footer #copyright {
+    flex: 6;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer #copyright>p {
+    font: bold 13px/1 "S-CoreDream-3Light";
+}
+
+footer #familysite {
+    flex: 2;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer #familysite select {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    width: 75%;
+    padding: 5px 10px;
+    font: bold 13px/1 "S-CoreDream-3Light";
+}

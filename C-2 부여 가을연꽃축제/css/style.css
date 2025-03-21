@@ -1,0 +1,418 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+
+/* wrap */
+#wrap {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    height: 650px;
+}
+
+/* popup  */
+#popupBg {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+}
+
+#popup {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 420px;
+
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+    overflow: hidden;
+
+    z-index: 99;
+}
+
+#popup h1 {
+    color: #333;
+    font: bold 18px/1 "Pretendard-Regular";
+    padding: 18px 20px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+#popup p {
+    color: #666;
+    font: normal 15px/1.3 "Pretendard-Regular";
+    padding: 30px 20px 10px;
+    /* margin-bottom: 20px; */
+}
+
+#popup .tag {
+    margin: 0 auto;
+    margin: 10px;
+}
+
+#popup .tag span {
+    display: block;
+    float: left;
+    color: #666;
+    font: normal 14px/1.3 "Pretendard-Regular";
+    padding: 5px 10px;
+    margin: 3px;
+    margin-bottom: 10px;
+
+    background: rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+}
+
+#popup button {
+    display: block;
+    outline: none;
+    border: none;
+
+    color: #333;
+    font: bold 13px/1 "Pretendard-Regular";
+    background: rgba(0, 0, 0, 0.07);
+
+    margin: 10px auto;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 95%;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+#popup button:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+#wrap header {
+    width: 220px;
+    height: 100%;
+}
+
+/* logo */
+#wrap header>h1 {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrap header>ul {
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#wrap header>ul>li.main {
+    width: 100%;
+}
+
+#wrap header>ul>li.main>a {
+    display: block;
+    text-align: center;
+    font: bold 16px/1 "Pretendard-Regular";
+
+    padding: 12px 0;
+}
+
+#wrap header>ul>li.main>a.on,
+#wrap header>ul>li.main>a:hover {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#wrap header>ul>li.main>ul.sub {
+    display: none;
+}
+
+#wrap header>ul>li.main>ul.sub>li>a {
+    display: block;
+    text-align: center;
+    font: normal 15px/1 "Pretendard-Regular";
+
+    padding: 10px 0;
+}
+
+#wrap header>ul>li.main>ul.sub>li>a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* main */
+#wrap main {
+    width: calc(100% - 220px);
+    height: 100%;
+}
+
+/* slide */
+#wrap main #slide {
+    width: 100%;
+    height: 350px;
+}
+
+#wrap main #slide .frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#wrap main #slide .frame>a {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+}
+
+#wrap main #slide .frame>a:nth-child(2),
+#wrap main #slide .frame>a:nth-child(3) {
+    display: none;
+}
+
+#wrap main #slide .frame>a>img {
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#wrap main #contentBox {
+    display: flex;
+    width: 100%;
+    height: 200px;
+}
+
+#wrap main #contentBox #notice {
+    flex: 1;
+    max-width: 300px;
+    padding: 15px 10px 15px 0;
+}
+
+#wrap main #contentBox #notice>a,
+#wrap main #contentBox #gallery>a {
+    display: block;
+    width: 120px;
+    border: 3px solid #e9e9e9;
+    border-bottom: none;
+    background: #ffffff;
+    border-radius: 15px 15px 0 0;
+
+    text-align: center;
+    padding: 10px 0;
+    font: bold 15px/1 "Pretendard-Regular";
+    transition: 0.3s;
+}
+
+#wrap main #contentBox #notice>ul {
+    display: block;
+    border-top: 3px solid #e9e9e9;
+    transition: 0.3s;
+}
+
+#wrap main #contentBox #notice:hover>a,
+#wrap main #contentBox #gallery:hover>a {
+    border: 3px dashed #fcbdea;
+    border-bottom: none;
+    background: #f5f5f5;
+}
+
+#wrap main #contentBox #notice:hover>ul,
+#wrap main #contentBox #gallery:hover>ul {
+    border-top: 3px dashed #fcbdea;
+}
+
+#wrap main #contentBox #notice>ul>li {
+    display: flex;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+#wrap main #contentBox #notice>ul>li:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#wrap main #contentBox #notice>ul>li:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+#wrap main #contentBox #notice>ul>li>a {
+    float: left;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: normal 14px/1 "Pretendard-Regular";
+}
+
+#wrap main #contentBox #notice>ul>li>span {
+    margin-left: auto;
+    font: normal 14px/1 "Pretendard-Regular";
+}
+
+#wrap main #contentBox #gallery {
+    flex: 1;
+    padding: 15px 10px 15px 0;
+}
+
+#wrap main #contentBox #gallery>ul {
+    display: flex;
+    height: 130px;
+    border-top: 3px solid #e9e9e9;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrap main #contentBox #gallery>ul>li {
+    width: 65px;
+    margin: 0 5px;
+}
+
+#wrap main #contentBox #gallery>ul>li>a {
+    display: block;
+}
+
+#wrap main #contentBox #gallery>ul>li>a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.4));
+}
+
+#wrap main #contentBox #href {
+    flex: 1;
+    background-image: url("../images/바로가기.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+#wrap main #contentBox #href:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+#wrap main #contentBox #href a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#wrap main #contentBox #href span.title {
+    display: block;
+    font: bold 20px/2 "Pretendard-Regular";
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#wrap main #contentBox #href span {
+    display: block;
+    font: normal 14px/1 "Pretendard-Regular";
+    color: #dddddd;
+}
+
+#wrap main footer {
+    display: flex;
+    width: 100%;
+    height: 100px;
+}
+
+#wrap main footer #copyright {
+    flex: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrap main footer #copyright span {
+    display: block;
+    font: normal 15px/1 "Pretendard-Regular";
+}
+
+#wrap main footer #sfBox {
+    flex: 3;
+}
+
+#wrap main footer #sfBox .sns {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#wrap main footer #sfBox .sns a {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+#wrap main footer #sfBox .sns a img {
+    width: 100%;
+}
+
+#wrap main footer #sfBox .familySite {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrap main footer #sfBox .familySite select {
+    width: 80%;
+    padding: 3px 5px;
+    outline: none;
+    border: none;
+    background: #e9e9e9;
+    font: normal 14px/1 "Pretendard-Regular";
+}

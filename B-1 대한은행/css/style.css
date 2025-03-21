@@ -1,0 +1,498 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "S-CoreDream-3Light";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* wrap */
+#wrap {
+    position: relative;
+}
+
+/* popup */
+#popup {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    background: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    z-index: 99;
+    overflow: hidden;
+}
+
+#popup>h1 {
+    width: 100%;
+    color: #0c0c0c;
+    font: bold 16px/1 "S-CoreDream-3Light";
+    text-align: center;
+    padding: 30px 0 5px;
+}
+
+#popup>span {
+    text-align: center;
+    padding: 5px 15px 30px;
+    color: #000000;
+    font: normal 12px/1 "S-CoreDream-3Light";
+}
+
+#popup span {
+    display: block;
+}
+
+#popup span.bold {
+    list-style: inside;
+    padding: 10px 15px 3px;
+    font: bold 14px/1 "S-CoreDream-3Light";
+}
+
+#popup span.nomal {
+    padding: 5px 15px;
+    font: normal 12px/1.2 "S-CoreDream-3Light";
+}
+
+#popup button#close {
+    display: block;
+    margin: 15px auto;
+    outline: none;
+    border: none;
+    width: 90%;
+    padding: 10px 0;
+    font: bold 14px/1 "S-CoreDream-3Light";
+    cursor: pointer;
+    border-radius: 5px;
+    background: #9cf50e;
+}
+
+#popup button#close:hover {
+    background: #90e900;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid #e9e9e9;
+}
+
+header .inner {
+    position: relative;
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header .inner>h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 100%;
+}
+
+header .inner>h1>a {
+    display: block;
+    margin-bottom: -8px;
+}
+
+header .inner>h1>a>img {
+    width: 100%;
+}
+
+header .inner>ul {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 50px;
+    z-index: 1;
+}
+
+header .inner>ul>li.main {
+    float: left;
+}
+
+header .inner>ul>li.main>a {
+    position: relative;
+    display: block;
+    font: bold 16px/1 "S-CoreDream-3Light";
+    width: 150px;
+    padding: 10px 0;
+    text-align: center;
+    transition: 0.2s;
+}
+
+header .inner>ul>li.main>a::before {
+    position: absolute;
+    transform: translateX(-50%) scaleX(0%);
+    left: 50%;
+    bottom: -3px;
+    content: "";
+    display: block;
+
+    width: 100%;
+    border-bottom: 2px solid #000;
+    transition: .2s;
+}
+
+header .inner>ul>li.main>a.on::before {
+    transform: translateX(-50%) scaleX(70%);
+}
+
+header .inner>ul>li.main>ul.sub {
+    position: absolute;
+    top: 40px;
+    display: none;
+    background: #ffffff;
+    width: 150px;
+    height: 145px;
+}
+
+header .inner>ul>li.main>ul.sub>li>a {
+    display: block;
+    font: normal 15px/1 "S-CoreDream-3Light";
+    text-align: center;
+    padding: 10px 0;
+    transition: .2s;
+}
+
+header .inner>ul>li.main>ul.sub>li>a:hover {
+    background: rgba(0, 0, 0, 0.03);
+    font-weight: bold;
+}
+
+/* slide */
+
+#slide {
+    margin: 0 auto;
+    width: 1200px;
+    height: 300px;
+    overflow: hidden;
+    z-index: -1;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+#slide ul.frame {
+    position: relative;
+    width: calc(1200px * 3);
+    height: 100%;
+    overflow: hidden;
+}
+
+#slide ul.frame>li {
+    width: 1200px;
+    height: 100%;
+    float: left;
+}
+
+#slide ul.frame>li>a {
+    display: block;
+    border-radius: 15px;
+}
+
+#slide ul.frame>li>a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* contentBox */
+
+#contentBox {
+    display: flex;
+    margin: 10px auto;
+    width: 1200px;
+    height: 200px;
+}
+
+#contentBox #tabMenu {
+    margin-right: 10px;
+    flex: 1;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#contentBox #tabMenu ul.tab {
+    display: flex;
+}
+
+#contentBox #tabMenu ul.tab>li {
+    border-right: 1px solid #ddd;
+}
+
+#contentBox #tabMenu ul.tab>li>a {
+    display: block;
+    width: 120px;
+    font: bold 15px/1 "S-CoreDream-3Light";
+    text-align: center;
+    padding: 13px 0;
+}
+
+#contentBox #tabMenu ul.tab>li.on {
+    background: #4b00a1;
+}
+
+#contentBox #tabMenu ul.tab>li.on>a {
+    color: #ffffff;
+}
+
+#contentBox #tabMenu #notice {
+    border-top: 1px solid #cacaca;
+    width: 100%;
+}
+
+#contentBox #tabMenu #notice>ul>li {
+    display: flex;
+    /* list-style: inside; */
+    padding: 4px 5px;
+    width: 95%;
+    margin: 6px auto;
+    border-bottom: 1px solid #ffffff;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#contentBox #tabMenu #notice>ul>li:hover {
+    border-bottom: 1px solid #000;
+}
+
+#contentBox #tabMenu #notice>ul>li>a {
+    float: left;
+    font: normal 14px/1 "S-CoreDream-3Light";
+}
+
+#contentBox #tabMenu #notice>ul>li>span {
+    margin-left: auto;
+    font: normal 14px/1 "S-CoreDream-3Light";
+}
+
+#contentBox #tabMenu .content #gallery {
+    border-top: 1px solid #cacaca;
+    width: 100%;
+    height: 155px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#contentBox #tabMenu .content #gallery>a {
+    display: block;
+    width: 100px;
+    height: 80px;
+}
+
+#contentBox #tabMenu .content #gallery>a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.4));
+}
+
+#contentBox #banner {
+    margin-right: 10px;
+    flex: 1;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#contentBox #banner>a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../images/배너.jpg");
+    background-position: 50% 40px;
+    background-size: 110%;
+}
+
+#contentBox #banner>a>h2 {
+    width: 100%;
+    font: bold 15px/1 "S-CoreDream-3Light";
+    text-align: center;
+    padding: 13px 0;
+    background: #ffbb00;
+    color: #ffffff;
+}
+
+#contentBox #banner>a>.title {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#contentBox #banner>a .title>span.phone {
+    color: rgba(255, 255, 255, 1);
+    font: bold 17px/1 "S-CoreDream-3Light";
+}
+
+#contentBox #banner>a .title>span.time {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font: normal 14px/1.4 "S-CoreDream-3Light";
+}
+
+#contentBox #href {
+    flex: 1;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#contentBox #href>a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../images/바로가기.jpg");
+    background-position: 50% 40px;
+    background-size: 110%;
+}
+
+#contentBox #href>a>h2 {
+    width: 100%;
+    font: bold 15px/1 "S-CoreDream-3Light";
+    text-align: center;
+    padding: 13px 0;
+    background: #9169ff;
+    color: #ffffff;
+}
+
+#contentBox #href>a>span.main {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+
+    display: block;
+    color: #ffffff;
+    font: italic bold 14px/1 "S-CoreDream-3Light";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#contentBox #href>a>span.main>span {
+    font-size: 19px;
+    color: #ffffff;
+}
+
+#contentBox #href>a>span.sub {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font: bold 13px/1.4 "S-CoreDream-3Light";
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 100px;
+    border-top: 2px solid #e9e9e9;
+}
+
+footer .inner {
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+}
+
+footer .inner>a {
+    flex: 2;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .inner>a>img {
+    width: 140px;
+}
+
+footer .inner .footerMenu {
+    flex: 8;
+}
+
+footer .inner .footerMenu>ul {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .inner .footerMenu>ul>li>a {
+    position: relative;
+    margin: 0 20px;
+    font: normal 14px/1 "S-CoreDream-3Light";
+}
+
+footer .inner .footerMenu>ul>li>a::before {
+    position: absolute;
+    transform: translateX(-50%) scaleX(0%);
+    left: 50%;
+    bottom: -3px;
+    content: "";
+    display: block;
+
+    width: 100%;
+    border-bottom: 2px solid #000;
+    transition: .2s;
+}
+
+footer .inner .footerMenu>ul>li>a:hover {
+    font-weight: bold;
+}
+
+footer .inner .footerMenu>ul>li>a:hover::before {
+    transform: translateX(-50%) scaleX(100%);
+}
+
+footer .inner .footerMenu .copyright {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .inner .footerMenu .copyright>p {
+    font: normal 14px/1 "S-CoreDream-3Light";
+}

@@ -1,0 +1,416 @@
+@charset "utf-8";
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* wrap */
+#wrap {
+    position: relative;
+}
+
+/* main */
+#main {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    height: 650px;
+}
+
+/* popup  */
+#popupBg {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+}
+
+#popup {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 420px;
+
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+    overflow: hidden;
+
+    z-index: 99;
+}
+
+#popup h1 {
+    color: #333;
+    font: bold 18px/1 "Pretendard-Regular";
+    padding: 18px 20px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+#popup span {
+    display: block;
+    font-family: "Pretendard-Regular";
+}
+
+#popup .bold {
+    padding: 10px 15px 5px;
+    font-weight: bold;
+}
+
+#popup .nomal {
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+
+#popup button {
+    display: block;
+    outline: none;
+    border: none;
+
+    color: #ffffff;
+    font: bold 13px/1 "Pretendard-Regular";
+    background: #002d57;
+
+    margin: 10px auto;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 95%;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+#popup button:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* header */
+#main header {
+    width: 200px;
+    height: 100%;
+    /* border-right: 2px solid #ddd; */
+}
+
+/* logo */
+#main header>h1 {
+    display: flex;
+    width: 100%;
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+}
+
+#main header>h1>a {
+    display: block;
+    width: 100px;
+}
+
+#main header>h1>a>img {
+    width: 100%;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
+}
+
+#main header>ul {
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#main header>ul>li.main {
+    width: 100%;
+    /* border-bottom: 2px solid #ddd; */
+}
+
+#main header>ul>li.main:last-child {
+    border-bottom: none;
+}
+
+#main header>ul>li.main>a {
+    display: block;
+    text-align: center;
+    font: bold 16px/1 "Pretendard-Regular";
+
+    padding: 12px 0;
+}
+
+#main header>ul>li.main>a.on,
+#main header>ul>li.main>a:hover {
+    color: #ffffff;
+    background: #002d57;
+}
+
+#main header>ul>li.main>ul.sub {
+    display: none;
+}
+
+#main header>ul>li.main>ul.sub>li>a {
+    display: block;
+    text-align: center;
+    font: normal 15px/1 "Pretendard-Regular";
+
+    padding: 10px 0;
+}
+
+#main header>ul>li.main>ul.sub>li>a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* main */
+#main main {
+    position: relative;
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
+#main main #contentBox {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    padding: 20px 30px 20px 10px;
+}
+
+#main main #contentBox #slide {
+    width: calc(100% - 230px);
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px 0 0 15px;
+}
+
+#main main #contentBox #slide .frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#main main #contentBox #slide .frame>li {
+    min-width: 100%;
+    height: 100%;
+}
+
+#main main #contentBox #slide .frame>li>a {
+    display: block;
+}
+
+#main main #contentBox #slide .frame>li>a>img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#main main #contentBox #href {
+    width: 230px;
+    height: 100%;
+    background-image: url("../images/banner.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    border-left: 5px solid #ffffff;
+    border-radius: 0 15px 15px 0;
+}
+
+#main main #contentBox #href>a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#main main #contentBox #href>a>span {
+    display: block;
+}
+
+#main main #contentBox #href>a>span:nth-child(1) {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    color: #ffffff;
+    font: bold 19px/1 "Pretendard-Regular";
+}
+
+#main main #contentBox #href>a>span:nth-child(2) {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    color: #ffffff;
+    font: normal 12px/1.3 "Pretendard-Regular";
+    opacity: 0.8;
+}
+
+#main main #NGboard {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    padding: 0px 30px 40px 20px;
+}
+
+#main main #NGboard #notice {
+    flex: 1;
+    /* border: 2px solid #ddd; */
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+#main main #NGboard #notice>a,
+#main main #NGboard #gallery>a {
+    display: block;
+    padding: 15px 0;
+    width: 140px;
+    
+    font: bold 16px/1 "Pretendard-Regular";
+
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    border: 2px solid #ddd;
+    border-bottom: none;
+}
+
+#main main #NGboard #notice>ul {
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 0 15px 15px 15px;
+    height: calc(100% - 35px);
+}
+
+#main main #NGboard #notice>ul>li {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#main main #NGboard #notice>ul>li:nth-child(1) {
+    margin-top: 13px;
+}
+
+#main main #NGboard #notice>ul>li:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#main main #NGboard #notice>ul>li>a {
+    font: normal 16px/1 "Pretendard-Regular";
+}
+
+#main main #NGboard #notice>ul>li>span {
+    font: normal 16px/1 "Pretendard-Regular";
+    letter-spacing: -0.5px;
+    margin-left: auto;
+}
+
+#main main #NGboard #notice>ul>li:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#main main #NGboard #gallery {
+    flex: 1;
+    /* border: 2px solid #ddd; */
+    border-radius: 15px;
+}
+
+#main main #NGboard #gallery .content {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 35px);
+    border: 2px solid #ddd;
+    border-radius: 0 15px 15px 15px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#main main #NGboard #gallery .content>a {
+    display: block;
+    width: 140px;
+    height: 90px;
+}
+
+#main main #NGboard #gallery .content>a>img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.4));
+}
+
+footer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    border-top: 2px solid #ddd;
+}
+
+footer>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+}
+
+footer>a>img {
+    height: 70px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+footer .copyright {
+    display: flex;
+    width: calc(100% - 230px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .copyright span {
+    display: block;
+    font: normal 15px/1.5 "Pretendard-Regular";
+}
+
+footer .familySite {
+    width: 230px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .familySite select {
+    outline: none;
+    margin: 0 auto;
+    width: 85%;
+    padding: 5px 10px;
+    border: 1px solid #999;
+    font: bold 14px/1 "Pretendard-Regular";
+}
